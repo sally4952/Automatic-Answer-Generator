@@ -6,3 +6,6 @@
 **注意：转载时请标明出处**
 
 [点此获取自动答案生成器windows版本](https://github.com/sally4952/Automatic-Answer-Generator/releases/tag/alpha%E7%89%88%E6%9C%AC)
+
+**alpha0.2更新：**
+  ·修复了BUG：在多线程模式下，生成答案数量没有达到预期。

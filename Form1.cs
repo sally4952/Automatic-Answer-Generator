@@ -97,8 +97,8 @@ namespace 自动答案生成器
             }
             else
             {
-                Task[] tasks = new Task[10];
-                for (int i = 0;i < tasks.Length;i++)
+                Task[] tasks = new Task[11];
+                for (int i = 0;i < tasks.Length - 1;i++)
                 {
                     tasks[i] = Task.Run(() =>
                     {
@@ -135,12 +135,46 @@ namespace 自动答案生成器
                         }
                     });
                 }
+                tasks[10] = Task.Run(() =>
+                {
+                    for (int j = 0; j < (题数 % 10); j++)
+                    {
+                        int temp = randow.Next(1, (int)(选项数 + 1));
+                        if (temp == 1) 答案 += "A  ";
+                        else if (temp == 2) 答案 += "B  ";
+                        else if (temp == 3) 答案 += "C  ";
+                        else if (temp == 4) 答案 += "D  ";
+                        else if (temp == 5) 答案 += "E  ";
+                        else if (temp == 6) 答案 += "F  ";
+                        else if (temp == 7) 答案 += "G  ";
+                        else if (temp == 8) 答案 += "H  ";
+                        else if (temp == 9) 答案 += "I  ";
+                        else if (temp == 10) 答案 += "J  ";
+                        else if (temp == 11) 答案 += "K  ";
+                        else if (temp == 12) 答案 += "L  ";
+                        else if (temp == 13) 答案 += "M  ";
+                        else if (temp == 14) 答案 += "N  ";
+                        else if (temp == 15) 答案 += "O  ";
+                        else if (temp == 16) 答案 += "P  ";
+                        else if (temp == 17) 答案 += "Q  ";
+                        else if (temp == 18) 答案 += "R  ";
+                        else if (temp == 19) 答案 += "S  ";
+                        else if (temp == 20) 答案 += "T  ";
+                        else if (temp == 21) 答案 += "U  ";
+                        else if (temp == 22) 答案 += "V  ";
+                        else if (temp == 23) 答案 += "W  ";
+                        else if (temp == 24) 答案 += "X  ";
+                        else if (temp == 25) 答案 += "Y  ";
+                        else if (temp == 26) 答案 += "Z  ";
+                        else throw new Exception("我代码是不是被改了？！");
+                    }
+                });
                 await Task.WhenAll(tasks);
                 textBox3.Text = 答案;
                 答案 = "";
             }
         }
-
+        
         [STAThread]
         private void button4_Click(object sender, EventArgs e)
         {
