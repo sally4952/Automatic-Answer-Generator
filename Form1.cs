@@ -12,7 +12,7 @@ namespace 自动答案生成器
         public static uint 题数;
         public static uint 选项数;
         public static string 答案;
-        public static Random randow = new Random();
+        public static Random randow;
         public static ComponentResourceManager resources = new ComponentResourceManager(typeof(Form1));
         public Form1()
         {
@@ -98,6 +98,7 @@ namespace 自动答案生成器
                 textBox2.Focus();
                 return;
             }
+            randow = new Random();
             if (!checkBox2.Checked)
             {
                 for (int i = 0; i < 题数; i++)
@@ -213,6 +214,7 @@ namespace 自动答案生成器
                 await Task.WhenAll(tasks);
                 textBox3.Text = 答案;
                 答案 = "";
+                randow = null;
             }
         }
         
